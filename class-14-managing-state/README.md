@@ -5,9 +5,7 @@ recipes & groceries - Patrick, Jessica, Lillian, Nassir
                       (STRETCH) fb msg bot app
 
 ## Class videos
- - [Part 1 of 4]()
- - [Part 2 of 4]()
- - [Part 3 of 4]()
- - [Part 4 of 4]()
+ - [Part 1 of 1](https://youtu.be/lnPT1z7qwuE)
+
 
 ## Helpful Resources
