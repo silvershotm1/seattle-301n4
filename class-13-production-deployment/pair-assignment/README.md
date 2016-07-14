@@ -6,6 +6,17 @@ Then you need to push your code to a web server accessible to the whole Internet
 
 We'll be using Heroku as our production server. Heroku is a "Platform as a Service": your code is plugged in to pre-configured servers, which are started up for the world to access.
 
+## Heroku Deployment
+
+**To make Heroku deployment work properly, you'll need to copy today's starter code into a brand new repo.** This is because the class repo contains copies of the starter code for each class, but we only want to deploy one copy. Therefore, we need to make a repo that contains just one copy of all of the blog files and deploy that to Heroku.
+
+1. Create a new repo on GitHub (call it 301-blog-deployment or some similar name)
+2. clone that repo onto your computer
+3. copy everything in the `class-13-production-deployment/pair-assignment/starter-code/` (but nothing else!) into that new repo.
+4. do your work in the new repo
+5. if you want a copy of today's work in your class repo, just copy the files from this new repo back to your class repo.
+
+
 ## User Stories: MVP
  1. As a site owner, I want my site running on a robust hosting platform, so that I don't have to hire a sysadmin.
   - Create a new Heroku app for deployment.
