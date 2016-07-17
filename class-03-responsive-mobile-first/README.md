@@ -1,8 +1,8 @@
 # Class 3 - Mobile-First / Responsive Design and SMACSS
 
 ## Daily Plan
-1. Code Review [Dan]
-2. RWD [Scott]
+1. Code Review
+2. RWD
   1. What is mobile first design?
   2. How is RWD used for mobile development?
   3. What is the difference between responsive and adaptive design?
@@ -10,7 +10,7 @@
   5. Logical operators to facilitate @media queries
   6. Building from mobile first to control scaling
   7. Understanding how to use viewport meta tags.
-    - Demo: Live-server: 172.16.0.24:8080  
+    <!-- - Demo: Live-server: 172.16.0.24:8080   -->
   8. What are some of the challenges of incorporating embedded media in RWD?
   9. Understanding how using SMACSS can benefit project development.
   10. Familiarity with using resets as base stylesheets.

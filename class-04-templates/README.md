@@ -1,10 +1,10 @@
 # Class 4 - Templates and Typography
 
 ## Daily Plan
-1. Code Review [Dan]
-2. Typography [Dan]
-3. RegEx Intro [Dan]
-3. Templates [Dan]
+1. Code Review
+2. Typography
+3. RegEx Intro
+3. Templates
 
 Templates have some advantages over direct DOM manipulation. Leverage those strengths in the blog, and in your portfolio application!
 

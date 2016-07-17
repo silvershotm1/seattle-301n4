@@ -3,10 +3,10 @@
 At the heart of every web app is the Web Request-Response Cycle. Pay close attention to how your app is creating and responding to requests. With client-side routing and the History API, we can add a layer of abstraction on top of the traditional routing.
 
 ## Daily Plan:
-1. Code Review [Scott]
-2. Routing & SPA [Scott]
-3. Page.js [Scott]
-4. Final Projects Intro [Scott]
+1. Code Review
+2. Routing & SPA
+3. Page.js
+4. Final Projects Intro
 
 ## Helpful Resources
 - What is a Single-Page Application (SPA), with live demo: http://www.johnpapa.net/pageinspa/

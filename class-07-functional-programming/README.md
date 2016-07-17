@@ -1,14 +1,14 @@
 # Assignment for Class 7 - Functional Programming
 
 ## Daily Plan
-1. Code Review [Dan]
-2. Functional Programming Overview [Scott]
+1. Code Review
+2. Functional Programming Overview
   - Vocab - Higher Order Functions, Immutability, Idempotence
   - forEach
   - Reduce
   - Map
   - Filter
-3. Scope / Modular IIFE Structure [Scott]
+3. Scope / Modular IIFE Structure
 4. Git 301
   - Merge Conflicts
 

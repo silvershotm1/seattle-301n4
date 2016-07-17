@@ -1,10 +1,10 @@
 # New Article Workshop
 
 ## Daily Plan
-1. Code review [Dan]
-2. Libraries - Highlight.js & Marked.js [Dan]
-3. In-class Workshop [Scott]
-4. Peer-review for portfolio assignment [Scott]
+1. Code review
+2. Libraries - Highlight.js & Marked.js
+3. In-class Workshop
+4. Peer-review for portfolio assignment
 
 The pair assignment is a in-class workshop.
 

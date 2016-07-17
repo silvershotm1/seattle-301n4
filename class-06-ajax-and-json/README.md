@@ -3,7 +3,7 @@
 ## Daily Plan
 *Intro to Models*
 
-2. Request/Response Cycle [Scott]
+2. Request/Response Cycle
   - URL/URI
   - DNS
   - HTTP Status Codes
@@ -12,9 +12,9 @@
   - Response
     - Status Headers Body
   - Network Tab - Dev console
-3. JSON Review [Dan]
+3. JSON Review
   - What is it? Why/How to use it?
-4. AJAX Intro [Dan]
+4. AJAX Intro
   - ajax, get, getJSON
   - deferred methods
 
