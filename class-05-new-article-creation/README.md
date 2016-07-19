@@ -1,5 +1,11 @@
 # New Article Workshop
 
+## Daily Plan
+1. Code review
+2. Libraries - Highlight.js & Marked.js
+3. In-class Workshop
+4. Peer-review for portfolio assignment
+
 The pair assignment is a in-class workshop.
 
 For your portfolio, pair up to do some code review with your classmates.
@@ -9,3 +15,6 @@ For your portfolio, pair up to do some code review with your classmates.
  - Syntax highlighting: https://github.com/isagalaev/highlight.js
 
 ## Class Videos
+ - [Part 1 of 3](https://youtu.be/o4BDMadEgyg)
+ - [Part 2 of 3](https://youtu.be/ufUUfiSQBI4)
+ - [Part 3 of 3](https://youtu.be/idQ9sIg1Gms)

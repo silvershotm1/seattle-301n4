@@ -1,8 +1,8 @@
 
+
 ## Class videos
- - [Part 1 of 4]()
- - [Part 2 of 4]()
- - [Part 3 of 4]()
- - [Part 4 of 4]()
+ - [7-10-16](https://youtu.be/lnPT1z7qwuE)
+ - [7-12-16](https://youtu.be/fsLwlN1lpM0)
+
 
 ## Helpful Resources
