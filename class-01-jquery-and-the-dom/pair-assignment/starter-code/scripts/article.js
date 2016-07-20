@@ -16,10 +16,19 @@ Article.prototype.toHtml = function() {
 
   $newArticle.attr('data-category', this.category);
 
+  $newArticle.find('a').text(this.author);
+  $newArticle.find('a').attr('href', this.authorURL);
+
+  $newArticle.find('h1').text(this.title);
+  $newArticle.attr('pubdate', this.publishedOn);
+
+  $newArticle.find('section.article-body').append(this.body);
   // TODO: Use jQuery to fill in the template with properties
   // from this particular Article instance. We need to fill in:
   // the author name and url, the article title and body, and the
   // publication date.
+
+
 
   // Include the publication date as a 'title' attribute to show on hover:
   $newArticle.find('time[pubdate]').attr('title', this.publishedOn)
