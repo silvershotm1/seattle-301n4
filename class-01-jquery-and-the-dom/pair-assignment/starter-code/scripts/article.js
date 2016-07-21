@@ -3,9 +3,9 @@ var articles = [];
 function Article (opts) {
   // TODO: Use the js object passed in to complete this contructor function:
   // Save ALL the properties of `opts` into `this`.
+  this.title = opts.title;
   this.author = opts.author;
   this.authorUrl = opts.authorUrl;
-  this.title = opts.title;
   this.category = opts.category;
   this.publishedOn = opts.publishedOn;
   this.body = opts.body;
@@ -15,7 +15,6 @@ function Article (opts) {
 Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
 
-
   // TODO: Use jQuery to fill in the template with properties
   // from this particular Article instance. We need to fill in:
   // the author name and url, the article title and body, and the
@@ -23,7 +22,7 @@ Article.prototype.toHtml = function() {
   $newArticle.find('h1').text(this.title);
   $newArticle.find('a').text(this.author);
   $newArticle.find('a').attr('href', this.authorUrl);
-  $newArticle.find('.article-body').text(this.body);
+  $newArticle.find('.article-body').html(this.body);
 
   // Include the publication date as a 'title' attribute to show on hover:
   $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
@@ -49,5 +48,3 @@ rawData.forEach(function(ele) {
 articles.forEach(function(a){
   $('#articles').append(a.toHtml());
 });
-console.log(articles[0]);
-articles[0].toHtml();
