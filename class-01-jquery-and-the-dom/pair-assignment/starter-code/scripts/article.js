@@ -36,7 +36,7 @@ Article.prototype.toHtml = function() {
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago')
 
   $newArticle.append('<hr>');
-  
+
   // TODO: This cloned article is no longer a template, so we should remove that class...
   $newArticle.removeClass('template');
 
@@ -46,11 +46,11 @@ Article.prototype.toHtml = function() {
 rawData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
-
+//
 rawData.forEach(function(ele) {
   articles.push(new Article(ele));
 });
-
+//
 articles.forEach(function(a){
   $('#articles').append(a.toHtml());
 });
