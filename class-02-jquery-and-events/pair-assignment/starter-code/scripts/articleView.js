@@ -57,8 +57,6 @@ articleView.handleCategoryFilter = function() {
   //       When the blank (default) option is selected, show all the articles, except for the template.
   //       Be sure to reset the #author-filter while you are at it!
 
-};
-
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       var $choice = $(this).val();
