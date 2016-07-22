@@ -33,10 +33,19 @@ articleView.handleAuthorFilter = function() {
       //       and then show just the ones that match for the author that was selected.
       //       Use an "attribute selector" to find those articles, and fade them in for the reader.
 
+      var $choice = $(this).val();
+      console.log($choice);
+
+      $('article').hide();
+      $('article[data-author="' + $choice + '"]').fadeIn();
+
+
     } else {
       // TODO: If the select box was changed to an option that is blank, we should
       //       show all the articles, except the one article we are using as a template.
 
+      $('article').show();
+      $('.template').hide();
     }
     $('#category-filter').val('');
   });
@@ -50,13 +59,37 @@ articleView.handleCategoryFilter = function() {
 
 };
 
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      var $choice = $(this).val();
+
+      $('article').hide();
+      $('article[data-category="' + $choice + '"]').fadeIn();
+
+
+    } else {
+      $('article').show();
+      $('.template').hide();
+    }
+    $('#author-filter').val('');
+  });
+};
+
 articleView.handleMainNav = function() {
   // TODO: Add an event handler to .main-nav element that will power the Tabs feature.
   //       Clicking any .tab element should hide all the .tab-content sections, and then reveal the
   //       single .tab-content section that is associated with the clicked .tab element.
   //       So: You need to dynamically build a selector string with the correct ID, based on the
   //       data available to you on the .tab element that was clicked.
+
   $('.main-nav').on(/* CODE GOES HERE */);
+
+  $('.main-nav').on('click', '.tab', function(){
+    var $whereToGo = $(this).data('content');
+    $('.tab-content').hide();
+    $('#' + $whereToGo).show();
+  }
+  );
 
   $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
 };
@@ -74,3 +107,10 @@ articleView.setTeasers = function() {
 
 // TODO: Call all of the above functions, once we are sure the DOM is ready.
 $();
+
+$(function(){
+  articleView.populateFilters();
+  articleView.handleAuthorFilter();
+  articleView.handleCategoryFilter();
+  articleView.handleMainNav();
+});
