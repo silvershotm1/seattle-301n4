@@ -58,7 +58,7 @@ articleView.handleMainNav = function() {
   //       data available to you on the .tab element that was clicked.
   $('.main-nav').on(/* CODE GOES HERE */);
 
-  $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
+  $('.main-nav .tab:first').  click(); // Let's now trigger a click on the first .tab element, to set up the page.
 };
 
 articleView.setTeasers = function() {
