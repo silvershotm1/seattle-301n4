@@ -4,6 +4,7 @@
 body {
   line-height: 1.5;
   font-size: 100%;
+  background-color: #95B795;
   color: #313131;
   margin: 2%;
 }
@@ -21,6 +22,7 @@ h1 {
   margin: 0px;
 }
 
+
 /*TEXT STYLES
 =======================================*/
 p {
@@ -35,12 +37,14 @@ address {
 =======================================*/
 
 a, a:link, a:active {
-  color: #777;
+  color: #EBECD5;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-}
+  color: #AF865D;
+  text-decoration: none;
+x }
 
 a:visited {
 }
