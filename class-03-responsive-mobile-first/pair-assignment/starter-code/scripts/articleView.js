@@ -56,7 +56,16 @@ articleView.toggleNavDisplay = function() {
   //TODO: once you've added your hamburger menu icon, add an event handler to hide/show
   //the nav menu when the icon is clicked
   $('#menu').on('click', function(){
-    $('.main-nav li').toggle();
+    $('.main-nav li').toggle().css();
+  });
+  $(window).on('resize', function() {
+    if ($(window).width() >= 414) {
+      $('.main-nav li').show().css({'display': 'inline'});
+    } else if ($(window).width() <= 414) {
+      $('.main-nav li').show().css({'display': 'flex', 'flex-direction': 'column'});
+    } else {
+      $('.main-nav li').hide();
+    }
   });
 };
 
