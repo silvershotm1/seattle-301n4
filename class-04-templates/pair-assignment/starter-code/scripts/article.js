@@ -23,6 +23,7 @@ Article.prototype.toHtml = function() {
     title: this.title,
     author: this.author,
     authorUrl: this.authorUrl,
+    category: this.category,
     body: this.body,
     publishedOn: this.publishStatus
   };
