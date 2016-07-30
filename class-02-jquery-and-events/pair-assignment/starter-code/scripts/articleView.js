@@ -101,9 +101,10 @@ articleView.setTeasers = function() {
   $('#articles').on('click', '.read-on', function(evnt){
     evnt.preventDefault();
 
-    $('article').show();    //show all articles again
-    $(this).hide();         //hide read-on link
-    $('.template').hide(); //hide template
+    $(this).parent().find('section').contents().show();
+    // $(this).parent().find().show();
+    $(this).hide();
+
   }
   );
 
