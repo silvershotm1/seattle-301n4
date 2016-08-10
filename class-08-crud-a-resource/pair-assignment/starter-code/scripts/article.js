@@ -22,7 +22,8 @@
   // TODO: Set up a DB table for articles.
   Article.createTable = function(callback) {
     webDB.execute(
-      '...', // what SQL command do we run here inside these quotes?
+      'CREATE TABLE IF NOT EXISTS Articles(id INTEGER PRIMARY KEY, title varChar(50) not null, category varChar(50) not null, author varChar(50) not null, authorURL varChar(50) not null, publishedOn varChar(50) not null, body text not null);',
+       // what SQL command do we run here inside these quotes?
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
@@ -33,19 +34,19 @@
   // TODO: Use correct SQL syntax to delete all records from the articles table.
   Article.truncateTable = function(callback) {
     webDB.execute(
-      'DELETE ...;', // <----finish the command here, inside the quotes.
+      'DELETE FROM Articles;', // <----finish the command here, inside the quotes.
       callback
+
     );
   };
-
 
   // TODO: Insert an article instance into the database:
   Article.prototype.insertRecord = function(callback) {
     webDB.execute(
       [
         {
-          'sql': '...;',
-          'data': [],
+          'sql': 'INSERT INTO Articles(title, category, author, authorURL, publishedOn, body) VALUES(?,?,?,?,?,?);',
+          'data': [this.title, this.category, this.author, this.authorURL, this.publishedOn, this.body],
         }
       ],
       callback
@@ -57,7 +58,8 @@
     webDB.execute(
       [
         {
-          /* ... */
+          'sql': 'DELETE FROM Articles WHERE id =?;',
+          'data':[this.id],
         }
       ],
       callback
@@ -69,7 +71,8 @@
     webDB.execute(
       [
         {
-          /* ... */
+          'sql': 'UPDATE Articles SET(id, title, category, author, authorURL, publishedOn, body);',
+          'data':[this.id, this.title, this.category, this.author, this.authorURL, this.publishedOn, this.body],
         }
       ],
       callback
@@ -86,10 +89,13 @@
   // TODO: Refactor this to check if the database holds any records or not. If the DB is empty,
   // we need to retrieve the JSON and process it.
   // If the DB has data already, we'll load up the data (sorted!), and then hand off control to the View.
-  Article.fetchAll = function() {
-    webDB.execute('', function(rows) { // TODO: fill these quotes to 'select' our table.
+  Article.fetchAll = function(callback) {
+    webDB.execute('SELECT * FROM Articles', function(rows) { // TODO: fill these quotes to 'select' our table.
       if (rows.length) {
-        // TODO: Now, 1st - instanitate those rows with the .loadAll function,
+
+        Article.loadAll(rows);
+        callback();
+          // TODO: Now, 1st - instanitate those rows with the .loadAll function,
         // and 2nd - pass control to the view by calling whichever function argument was passed in to fetchAll.
 
       } else {
@@ -98,12 +104,14 @@
           rawData.forEach(function(item) {
             var article = new Article(item); // Instantiate an article based on item from JSON
             // TODO: Cache the newly-instantiated article in the DB: (what can we call on each 'article'?)
-
+            article.insertRecord();
           });
           // Now get ALL the records out the DB, with their database IDs:
-          webDB.execute('', function(rows) { // TODO: select our now full table
+          webDB.execute('SELECT * from Articles', function(rows) { // TODO: select our now full table
             // TODO: Now, 1st - instanitate those rows with the .loadAll function,
             // and 2nd - pass control to the view by calling whichever function argument was passed in to fetchAll.
+            Article.loadAll(rows);
+            callback();
 
           });
         });
@@ -140,13 +148,13 @@
           return a.author === author;
         })
         .map(function(a) {
-          return a.body.match(/\b\w+/g).length
+          return a.body.match(/\b\w+/g).length;
         })
         .reduce(function(a, b) {
           return a + b;
         })
-      }
-    })
+      };
+    });
   };
 
   Article.stats = function() {
@@ -155,7 +163,7 @@
       numWords: Article.numwords(),
       Authors: Article.allAuthors(),
     };
-  }
+  };
 
   module.Article = Article;
 })(window);
