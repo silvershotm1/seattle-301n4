@@ -12,6 +12,7 @@ This type of relationship is less common because most information related in thi
 
 Person table
 
+
 | person_id (PK) | firstName | lastName | ssn | date_of_birth |
 | - | - | - | - | - |
 | 1 | Scott | Schmidt | 12312123 | 01-12-1983 |
@@ -19,6 +20,7 @@ Person table
 | 3 | Sam | Hamm | 98798987 | 12-12-1965 |
 
 Contact Info table
+
 
 contact_id (PK) | user_id (FK) | street | city | state | zip
 -|-|-|-|-
