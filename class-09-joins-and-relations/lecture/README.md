@@ -12,7 +12,7 @@ This type of relationship is less common because most information related in thi
 
 Person table
 
-person_id (pk) | firstName | lastName | ssn | date_of_birth 
+person_id (pk) | firstName | lastName | ssn | date_of_birth
 --- | --- | --- | --- | ---
 1 | Scott | Schmidt | 12312123 | 01-12-1983
 2 | Dan | Schwartz | 45645456 | 04-16-1981
@@ -21,7 +21,7 @@ person_id (pk) | firstName | lastName | ssn | date_of_birth
 Contact Info table
 
 contact_id (PK) | user_id (FK) | street | city | state | zip
--|-|-|-|-
+---|---|---|---|---
 1 | 3 | 1234 Harrison | Seattle | WA | 98109
 2 | 1 | 432 3rd Ave | Seattle | WA | 98102
 3 | 2 | 2424 62nd Ave | Maple Valley | WA | 98038
