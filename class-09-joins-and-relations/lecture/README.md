@@ -56,8 +56,8 @@ author_id (pk) | author_name
 
 Books Table
 
-book_id | author_id | book_name
---- | --- | --
+book_id (pk) | author_id (fk) | book_name
+--- | --- | ---
 1 | 4 | Left Hand of Darkness
 2 | 3 | Dune
 3 | 3 | Children of Dune
