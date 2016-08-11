@@ -47,7 +47,7 @@ Make a one-to-many relationship if only one of the related columns is a primary 
 
 Authors Table
 
-author_id | author_name
+author_id (pk) | author_name
 --- | ---
 1 | Issac Asimov
 2 | Arthur C. Clark
@@ -56,7 +56,7 @@ author_id | author_name
 
 Books Table
 
-book_id (pk) | author_id (fk) | book_name
+book_id | author_id | book_name
 --- | --- | --
 1 | 4 | Left Hand of Darkness
 2 | 3 | Dune
