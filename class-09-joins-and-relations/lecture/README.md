@@ -159,8 +159,6 @@ INNER JOIN authors
   ON books.author_id=authors.author_id;
 ```
 
-book_id |
-
 ## Left (Outer) Joins
 Select all records from Table A, along with records from Table B for which the join condition is met (if at all).
 
