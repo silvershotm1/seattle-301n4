@@ -12,7 +12,7 @@ This type of relationship is less common because most information related in thi
 
 Person table
 
-person_id(pk) | firstName | lastName | ssn | date_of_birth 
+person_id (pk) | firstName | lastName | ssn | date_of_birth 
 --- | --- | --- | --- | ---
 1 | Scott | Schmidt | 12312123 | 01-12-1983
 2 | Dan | Schwartz | 45645456 | 04-16-1981
