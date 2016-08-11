@@ -20,7 +20,7 @@ person_id (pk) | firstName | lastName | ssn | date_of_birth
 
 Contact Info table
 
-contact_id | user_id | street | city | state | zip
+contact_id (pk) | user_id (fk) | street | city | state | zip
 --- | --- | --- | --- | --- | ---
 1 | 3 | 1234 Harrison | Seattle | WA | 98109
 2 | 1 | 432 3rd Ave | Seattle | WA | 98102
@@ -48,7 +48,7 @@ Make a one-to-many relationship if only one of the related columns is a primary 
 Authors Table
 
 author_id (pk) | author_name
--|-
+--- | ---
 1 | Issac Asimov
 2 | Arthur C. Clark
 3 | Frank Herbert
@@ -57,7 +57,7 @@ author_id (pk) | author_name
 Books Table
 
 book_id (pk) | author_id (fk) | book_name
--|-
+--- | --- | --
 1 | 4 | Left Hand of Darkness
 2 | 3 | Dune
 3 | 3 | Children of Dune
@@ -75,7 +75,7 @@ In a many-to-many relationship, a row in `table A` can have many matching rows i
 Order Table
 
 order_id (pk) | order_name | ship_address | ship_city | ship_state
--|-
+--- | --- | --- | --- | ---
 1 | New computers | 1234 Harry St | Bellevue | WA
 2 | Upgrade iPads | 342 Bell Ave | Boston | MA
 3 | Hard Drive | 999 Whiskey Ave | New York | NY
@@ -83,7 +83,7 @@ order_id (pk) | order_name | ship_address | ship_city | ship_state
 Order Detail Table (Junction)
 
 detail_id (pk) | order_id (fk) | product_id (fk) | unit_price | qty
--|-|-
+--- | --- | --- | --- | ---
 1 | 1 | 1 | 1299.00 | 2
 2 | 1 | 4 | 99.00 | 2
 3 | 1 | 5 | 99.00 | 2
@@ -97,7 +97,7 @@ detail_id (pk) | order_id (fk) | product_id (fk) | unit_price | qty
 Product Table
 
 product_id (pk) | product_name | qty_per_unit | supplier_id (fk)
--|-
+--- | --- | --- | ---
 1 | Macbook Pro | 1 | 1225
 2 | iPad Air 2 | 1 | 1225
 3 | 1TB SSD | 1 | 2539
@@ -121,7 +121,7 @@ This is used when a table needs to have a relationship with itself. For example,
 The table may look like this:
 
 customer_id (pk) | customer_name | referrer_id (fk)
--|-
+--- | --- | ---
 1 | Dan Schwatz | null
 2 | Scott Schmidt | 1
 3 | Jessica Vasquez-Soltero | 1
