@@ -20,7 +20,7 @@ person_id (pk) | firstName | lastName | ssn | date_of_birth
 
 Contact Info table
 
-contact_id (PK) | user_id (FK) | street | city | state | zip
+contact_id(pk) | user_id(fk) | street | city | state | zip
 ---|---|---|---|---
 1 | 3 | 1234 Harrison | Seattle | WA | 98109
 2 | 1 | 432 3rd Ave | Seattle | WA | 98102
