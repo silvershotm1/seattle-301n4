@@ -32,23 +32,23 @@
       if (rows.length) {
         return;
       } else {
-        $.get('/data/zips.json')
+        $.get('data/zips.json')
         .done(function(data) {
           data.forEach(function(ele) {
             webDB.execute(
               [
                 {
-                'sql': 'INSERT INTO zips(city, state, latitude, longitude, population, zip) VALUES(?, ?, ?, ?, ?, ?);',
-                'data': [ele.city, ele.state, ele.loc[1], ele.loc[0], ele.pop, ele.zip],
+                  'sql': 'INSERT INTO zips(city, state, latitude, longitude, population, zip) VALUES(?, ?, ?, ?, ?, ?);',
+                  'data': [ele.city, ele.state, ele.loc[1], ele.loc[0], ele.pop, ele.zip],
                 }
               ],
               function(results) {
 
-              })
-            })
-          })
+              });
+          });
+        });
       }
-    })
-  }
+    });
+  };
   module.zips = zips;
 })(window)
