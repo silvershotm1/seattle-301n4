@@ -42,17 +42,29 @@
   search.handleStates();
 
   search.handleZips = function() {
-    $('form').on('submit', function(){
+    $('form').on('submit', function(e){
+      console.log(e.target.zipCode.value);
+      e.preventDefault();
       webDB.execute(
-      'SELECT DISTINCT city,latitude,longitude FROM zips WHERE zip="' + this.value + '" ORDER BY city DESC', function(rows) {
-        console.log(this.value);
-        console.log(rows);
+      'SELECT city, latitude, longitude FROM zips WHERE zip="' + e.target.zipCode.value + '";', function(rows) {
         rows.forEach(function(ele) {
-          search.handleZips();
+          initMap(rows);
         });
       }
     );
     });
   };
+  search.handleZips();
+
+  search.handleCities = function(){
+    $('#city-select').on('change', function() {
+      webDB.execute(
+      'SELECT latitude, longitude FROM zips WHERE city="' + this.value + '" AND state="' + $('#state-select').val() + '"', function(rows) {
+        console.log(rows);
+        initMap(rows);
+      });
+    });
+  };
+  search.handleCities();
   module.search = search;
 })(window);
