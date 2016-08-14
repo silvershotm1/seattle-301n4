@@ -47,9 +47,15 @@
       e.preventDefault();
       webDB.execute(
       'SELECT city, latitude, longitude FROM zips WHERE zip="' + e.target.zipCode.value + '";', function(rows) {
-        rows.forEach(function(ele) {
+        if(rows.length > 0){
+          rows.forEach(function(ele){
+          });
           initMap(rows);
-        });
+          $('#zipCode').css({'background-color': 'white'});
+        } else {
+          console.log('no');
+          $('#zipCode').css({'background-color': 'red'});
+        }
       }
     );
     });
@@ -60,7 +66,6 @@
     $('#city-select').on('change', function() {
       webDB.execute(
       'SELECT latitude, longitude FROM zips WHERE city="' + this.value + '" AND state="' + $('#state-select').val() + '"', function(rows) {
-        console.log(rows);
         initMap(rows);
       });
     });
