@@ -29,21 +29,17 @@ articleView.populateFilters = function() {
 articleView.handleAuthorFilter = function() {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
-      // TODO: If the select box was changed to an option that has a value, we need to hide all the articles,
+      var $authorSelected = $(this).val();
+      console.log($authorSelected);
+      // If the select box was changed to an option that has a value, we need to hide all the articles,
       //       and then show just the ones that match for the author that was selected.
       //       Use an "attribute selector" to find those articles, and fade them in for the reader.
-
-      var $choice = $(this).val();
-      console.log($choice);
-
       $('article').hide();
-      $('article[data-author="' + $choice + '"]').fadeIn();
-
+      $('article[data-author="' + $authorSelected + '"]').fadeIn(750);
 
     } else {
-      // TODO: If the select box was changed to an option that is blank, we should
+      // If the select box was changed to an option that is blank, we should
       //       show all the articles, except the one article we are using as a template.
-
       $('article').show();
       $('.template').hide();
     }
@@ -56,37 +52,36 @@ articleView.handleCategoryFilter = function() {
   //       When an option with a value is selected, hide all the articles, then reveal the matches.
   //       When the blank (default) option is selected, show all the articles, except for the template.
   //       Be sure to reset the #author-filter while you are at it!
-
   $('#category-filter').on('change', function() {
+    // $('option:first-child').attr('selected', true);
+    $('#author-filter').val('');
     if ($(this).val()) {
-      var $choice = $(this).val();
-
+      var $catSelected = $(this).val();
       $('article').hide();
-      $('article[data-category="' + $choice + '"]').fadeIn();
-
+      $('article[data-category="' + $catSelected + '"]').fadeIn(750);
     } else {
+      // If the select box was changed to an option that is blank, we should
+      //       show all the articles, except the one article we are using as a template.
       $('article').show();
       $('.template').hide();
     }
-    $('#author-filter').val('');
   });
 };
 
 articleView.handleMainNav = function() {
-  // TODO: Add an event handler to .main-nav element that will power the Tabs feature.
+  // Add an event handler to .main-nav element that will power the Tabs feature.
   //       Clicking any .tab element should hide all the .tab-content sections, and then reveal the
   //       single .tab-content section that is associated with the clicked .tab element.
   //       So: You need to dynamically build a selector string with the correct ID, based on the
   //       data available to you on the .tab element that was clicked.
-
-  $('.main-nav').on('click', '.tab', function(){
-    var $whereToGo = $(this).data('content');
+  $('.main-nav').on('click', '.tab', function() {
+    var $clickedTab = $(this).data('content');
+    console.log($clickedTab);
     $('.tab-content').hide();
-    $('#' + $whereToGo).show();
-  }
-  );
+    $('#' + $clickedTab).fadeIn(750);
+  });
 
-  $('.main-nav .tab:first').  click(); // Let's now trigger a click on the first .tab element, to set up the page.
+  $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
 };
 
 articleView.setTeasers = function() {
@@ -97,25 +92,18 @@ articleView.setTeasers = function() {
   //       "Read On" link once it has been clicked. Be sure to prevent the default link-click action!
   //       Ideally, we'd attach this as just 1 event handler on the #articles section, and let it
   //       process any .read-on clicks that happen within child nodes.
-
-  $('#articles').on('click', '.read-on', function(evnt){
-    evnt.preventDefault();
-
-    $(this).parent().find('section').contents().show();
-    // $(this).parent().find().show();
+  $('#articles').on('click', '.read-on', function(event) {
+    event.preventDefault();
+    // $('#articles').show();
     $(this).hide();
-
-  }
-  );
-
+    // $(' *:nth-of-type(n+2)').fadeIn(750);
+  });
 };
 
 // TODO: Call all of the above functions, once we are sure the DOM is ready.
-
-$(function(){
-  articleView.populateFilters();
-  articleView.handleAuthorFilter();
-  articleView.handleCategoryFilter();
-  articleView.handleMainNav();
-  articleView.setTeasers();
-});
+articleView.populateFilters();
+articleView.handleAuthorFilter();
+articleView.handleCategoryFilter();
+articleView.handleMainNav();
+articleView.setTeasers();
+$();
