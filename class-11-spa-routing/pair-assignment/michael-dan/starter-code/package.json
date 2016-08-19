@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "express-request-proxy": "^1.0.10"
+    "express-request-proxy": "^1.2.0"
   }
 }
