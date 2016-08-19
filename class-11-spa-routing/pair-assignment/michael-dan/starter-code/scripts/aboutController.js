@@ -3,7 +3,8 @@
 
   // Done: Define a function that hides all main section elements, and then reveals just the #about section:
   aboutController.index = function() {
-    $('tab-content').hide();
+    console.log('Here\'s the about page');
+    $('.tab-content').hide();
     $('#about').fadeIn('slow');
   };
 

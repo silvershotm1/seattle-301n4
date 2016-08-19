@@ -10,7 +10,7 @@
   // Done: Also be sure to hide all the main section elements, and reveal the #articles section:
   articlesController.index = function() {
     $('.tab-content').hide();
-    $('#about').fadeIn('slow');
+    $('#articles').fadeIn('slow');
   };
 
   module.articlesController = articlesController;
