@@ -9,8 +9,8 @@
   // code that used to be in index.html.
   // Done: Also be sure to hide all the main section elements, and reveal the #articles section:
   articlesController.index = function() {
-    $('tab-content').hide();
-    $('#about').fadeIn('slow');
+    $('.tab-content').hide();
+    $('#articles').fadeIn('slow');
   };
 
   module.articlesController = articlesController;
