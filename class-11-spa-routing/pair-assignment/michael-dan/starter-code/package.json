@@ -9,7 +9,7 @@
   "author": "Code Fellows",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "^4.14.0",
     "express-request-proxy": "^1.0.10"
   }
 }
