@@ -72,8 +72,8 @@
     webDB.execute(
       [
         {
-          'sql': 'UPDATE Articles SET(id, title, category, author, authorURL, publishedOn, body);',
-          'data':[this.id, this.title, this.category, this.author, this.authorURL, this.publishedOn, this.body],
+          'sql': 'UPDATE Articles SET title = ?, category = ?, author = ?, authorUrl = ?, publishedOn = ?, body = ? WHERE id = ?;',
+          'data': [this.title, this.category, this.author, this.authorUrl, this.publishedOn, this.body, this.id],
         }
       ],
       callback
@@ -100,7 +100,7 @@
         // and 2nd - pass control to the view by calling whichever function argument was passed in to fetchAll.
 
       } else {
-        $.getJSON('/data/hackerIpsum.json', function(rawData) {
+        $.getJSON('data/hackerIpsum.json', function(rawData) {
           // Cache the json, so we don't need to request it next time:
           rawData.forEach(function(item) {
             var article = new Article(item); // Instantiate an article based on item from JSON
